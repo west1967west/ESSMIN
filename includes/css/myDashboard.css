@@ -1,0 +1,229 @@
+
+	#dashboard{display:none;}
+	#newInvestmentMain{display:none;}
+	#newInvestmentDetails{display:none;}
+	#myInvestmentMain{display:none;}
+	#myProfitMain{display:none;}
+	#myProfileMain{display:none;}
+	#myWithdrawalMain{display:none;}
+	#selectDuration{display:none;}
+	#orderLoaderContainer{display:none;}
+	#profitLoaderContainer{display:none;}
+	#withdrawalRequestForm{display:none;}
+	#withdrawalContainer{display:none;}
+	body{background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);}
+	.myBg1{background-color:#0e1a35;}
+	.myBg2{background-color:#003679;}
+	.myBtn {
+	  color:white;
+	  background-color:#00004d;
+	  border-color: black;
+	}
+	
+	
+	.myBtn:hover {
+	  color:white;
+	  background-color:#0e1a35;
+	  border-color: black;
+	}
+	
+	.dashboardHead {
+	  height: 47px;
+	  line-height: 47px;
+	  background: #00004d;
+	  color: #fff;
+	  text-transform: uppercase;
+	  font-weight: bold;
+	  margin: 0;
+	  letter-spacing: 0.08em;
+		}
+		
+		
+	.processBox{
+		  margin-top: 5px;
+		  margin-bottom: 10px;
+		  padding-bottom: 15px;
+		  text-align: center;
+		  border: solid 1.5px green;
+		  overflow: hidden;
+		  height:300px;
+	}
+	
+	.processBox p{
+		  padding:15px;
+	}
+	
+	.heading h1,
+	.heading h2,
+	.heading h3,
+	.heading h4,
+	.heading h5 {
+	  display: inline-block;
+	  line-height: 1.1;
+	  margin-bottom: 0;
+	  padding-bottom: 10px;
+	  vertical-align: middle;
+	  text-transform: uppercase;
+	  letter-spacing: 0.06em;
+	}
+	
+	.packages .package {
+	  background: #fff;
+	  margin-top: 25px;
+	  margin-bottom: 20px;
+	  padding-bottom: 15px;
+	  text-align: center;
+	  border: solid 1px #6aae7a;
+	  overflow: hidden;
+	}
+	
+	.packages .package .package-header {
+	  height: 57px;
+	  color: #fff;
+	  line-height: 57px;
+	  background: green;
+	  
+	}
+	
+	.packages .package .package-header h5 {
+	  color: #fff;
+	  text-transform: uppercase;
+	  font-weight: bold;
+	  line-height: 57px;
+	  margin: 0;
+	  letter-spacing: 0.08em;
+	}	
+
+	.packages .package .price {
+	  line-height: 100px;
+	  height: 70px;
+	  color: green;
+	  font-weight: 400;
+	}
+	
+	.packages .package .price h4 {
+	  display: inline;
+	  font-size: 50px;
+	  line-height: normal;
+	  margin-bottom: 0;
+	}
+	
+		.packages .package .price .period {
+		  line-height: normal;
+		  color: #999999;
+		}
+		.packages .package ul {
+		  padding: 0;
+		}
+		.packages .package ul li {
+		  list-style-type: none;
+		  padding-top: 10px;
+		  padding-bottom: 10px;
+		  width: 80%;
+		  margin: auto;
+		  border-bottom: 1px dotted #ccc;
+		}
+		.packages .package ul li:last-child {
+		  border-bottom: 0;
+		}
+		.packages .package ul li i {
+		  font-size: 13px;
+		  margin-right: 5px;
+		}
+		.packages .best-value .package {
+		  margin-top: 0;
+		  padding-bottom: 40px;
+		}
+		.packages .best-value .package .package-header {
+		  height: 72px;
+		  padding-top: 17px;
+		  height: 82px !important;
+		}
+		.packages .best-value .package .package-header h5 {
+		  font-weight: bold;
+		  line-height: 29px;
+		  text-transform: uppercase;
+		  letter-spacing: 0.08em;
+		}
+		.packages .best-value .package .package-header .meta-text {
+		  font-size: 13px;
+		  line-height: 15px;
+		}
+	
+		.icon {
+		  display: inline-block;
+		  width: 80px;
+		  height: 80px;
+		  color: #fff;
+		  line-height: 80px;
+		  border-radius: 40px;
+		  border: solid 1px #fff;
+		  font-size: 30px;
+		  border-width: 2px;
+		  padding-top:20px;
+		}
+		
+		
+		.box-simple {
+		  text-align: center;
+		  margin-bottom: 40px;
+		}
+		
+		.box-simple .icon {
+		  color: white;
+		  border-color: white;
+		  -webkit-transition: all 0.2s ease-out;
+		  -moz-transition: all 0.2s ease-out;
+		  transition: all 0.2s ease-out;
+		}
+		
+		.box-simple h3 {
+		  font-weight: normal;
+		  font-size: 18px;
+		  text-transform: uppercase;
+		  line-height: 1.5;
+		  color: #00e600;
+		  font-weight: 800;
+		  letter-spacing: 0.08em;
+		}
+		
+		.box-simple p {
+		  color: white;
+		}
+	
+	.countdown-timer-wrapper {
+	  border-radius: 5px;
+	  background-color: rgba(0, 102, 102, 255);
+	  max-width: auto;
+	}
+
+	.countdown-timer-wrapper h5 {
+	  font-size: 12px;
+	  letter-spacing: 0.5px;
+	  text-align: center;
+	  padding-top: 10px;
+	  text-shadow: none;
+	}
+
+	.countdown-timer-wrapper .timer {
+	  padding: 10px;
+	  text-align: center;
+	  padding-top: 15px;
+	}
+
+	.countdown-timer-wrapper .timer .timer-wrapper {
+	  display: inline-block;
+	  width: 40px;
+	  height: 50px;
+	}
+
+	.countdown-timer-wrapper .timer .timer-wrapper .time {
+	  font-size: 28px;
+	  font-weight: bold;
+	  color: #ffffff;
+	}
+
+	.countdown-timer-wrapper .timer .timer-wrapper .text {
+	  font-size: 12px;
+	  color: rgba(255, 255, 255, 0.6);
+	}

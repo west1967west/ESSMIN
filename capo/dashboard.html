@@ -1,0 +1,280 @@
+<html>
+<head>
+
+    <title>JILLS Pay</title>
+    <!--Bootstrap Css-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   
+    <!--Bootsrap Script-->
+    <script src="../includes/bootstrap/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../includes/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../includes/bootstrap/js/sweetalert.min.js"></script>
+
+   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+    <link href="../includes/css/CssBox.css" rel="stylesheet" type="text/css" />
+    <link href="../includes/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../includes/css/adminDashboard.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body class="home">
+    <div class="container-fluid display-table">
+        <div class="row display-table-row">
+            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+                <div class="logo">
+                    <a hef="home.html"><img id="profilePic1" src="" alt="JILLS-Pay" class="hidden-xs hidden-sm">
+                        <img id="profilePic2" src="" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
+                    </a>
+                </div>
+                <div class="navi">
+                    <ul>
+                        <li class="active"><a href="#" id="dashboardViewBtn"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li><a href="#" id="membersViewBtn"><i class="fa fa-users" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Members</span></a></li>
+                        <li><a href="#" id="investmentViewBtn"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Investment</span></a></li>
+                        <li><a href="#" id="withdrawalViewBtn"><i class="fa fa-money" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Withdrawal</span></a></li>
+                        <li><a href="#" id="reportViewBtn"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Report</span></a></li>
+                        <li><a href="#" id="profileViewBtn"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Profile</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-11 display-table-cell v-align">
+                <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
+                <div class="row">
+                    <header>
+                        <div class="col-md-7">
+                            <nav class="navbar-default pull-left">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="#side-menu" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                            </nav>
+                            <div class="search hidden-xs hidden-sm hidden">
+                                <input type="text" placeholder="Search" id="search">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="header-rightside">
+                                <ul class="list-inline header-top pull-right">
+                                    <li class="hidden-xs"><a href="#" onclick="logout()" class="add-project btn-danger" >Logout</a></li>
+                                    
+                                    <li>
+                                        <a href="#" class="icon-info">
+                                            <i class="fa fa-bell" aria-hidden="true"></i>
+                                            <span class="label label-primary" id="reportCount2">0</span>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img id="profilePic3" src="" alt="user">
+                                            <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="navbar-content">
+                                                    <span>JILLS PAY</span>
+                                                    <p class="text-muted small">
+                                                        ADMIN
+                                                    </p>
+                                                    <div class="divider">
+                                                    </div>
+                                                    <a href="#" id="profileViewBtn2" class="view btn-sm active">View Profile</a>
+                                                    <a href="#" onclick="logout()" class="view btn-sm btn-danger active">Logout</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+<!--MAIN BODY------------------------------------------------------------------------------------------------------------------------------>
+                <div class="user-dashboard">
+<!--DASHBOARD MENU COUNT------------------------------------------------------------------------------------------------------------------>                 <div id="dashboardView">
+                   <h4 class="text-center dashboardHead top-10">ADMIN DASHBOARD</h4>
+                
+                    <div class="row top-10" >
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="#">
+                                <div class="circle-tile-heading dark-blue">
+                                    <i class="fa fa-users fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content dark-blue">
+                                <div class="circle-tile-description text-faded">
+                                    Members
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                    <b id="userCount"></b>
+                                    <span id="sparklineA"></span>
+                                </div>
+                                <a href="#" id="membersViewBtn2" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="#">
+                                <div class="circle-tile-heading green">
+                                    <i class="fa fa-bar-chart fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content green">
+                                <div class="circle-tile-description text-faded">
+                                    Investment
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                     <b id="investCount"></b>
+                                </div>
+                                <a href="#" id="investmentViewBtn2" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="#">
+                                <div class="circle-tile-heading blue">
+                                    <i class="fa fa-money fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content blue">
+                                <div class="circle-tile-description text-faded">
+                                    Withdrawal
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                     <b id="widCount"></b>
+                                    <span id="sparklineB"></span>
+                                </div>
+                                <a href="#" id="withdrawalViewBtn2" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="#">
+                                <div class="circle-tile-heading purple">
+                                    <i class="fa fa-comments fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content purple">
+                                <div class="circle-tile-description text-faded">
+                                    Report
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                     <b id="reportCount"></b>
+                                    <span id="sparklineD"></span>
+                                </div>
+                                <a href="#" id="reportViewBtn2" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="membersView">
+                <h4 class="text-center dashboardHead top-10">MEMBERS</h4>
+                <div class="">
+                    <table class="table table-sm table-dark" id="membersData" ></table>
+                </div>
+                <button onclick="nextList('user')" id="nextUserBtn" class="btn btn-primary btn-lg">Next List</button>
+                <button onclick="refreshList('user')" id="refreshUserBtn" class="btn btn-primary btn-lg">Refresh</button>
+                
+            </div>
+
+            <div id="investmentView">
+                <h4 class="text-center dashboardHead top-10">INVESTMENT</h4>
+                <div class="form-group">
+                    <select class="form-control" id="invFilter">
+                        <option value="NULL">Filter View --------</option>
+                        <option value="*">All Investment</option>
+                        <option value="0">Active Investment</option>
+                        <option value="1">Terminated Investment</option>
+                    </select>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="investmentData" ></table>
+                </div>
+                <button onclick="nextList('inv')" id="nextInvBtn" class="btn btn-primary btn-lg">Next List</button>
+                <button onclick="refreshList('inv')" id="refreshInvBtn" class="btn btn-primary btn-lg">Refresh</button>
+                
+            </div>
+
+            <div id="withdrawalView">
+                <h4 class="text-center dashboardHead top-10">WITHDRWAL REQUEST</h4>
+                <div class="form-group">
+                <select class="form-control" id="widFilter">
+                        <option value="NULL">Filter View --------</option>
+                        <option value="*">All Withdrawal</option>
+                        <option value="0">Pending</option>
+                        <option value="1">Approved</option>
+                </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="withdrawalData" ></table>
+                </div>
+                <button onclick="nextList('wid')" id="nextWidBtn" class="btn btn-primary btn-lg">Next List</button>
+                <button onclick="refreshList('wid')" id="refreshWidBtn" class="btn btn-primary btn-lg">Refresh</button>
+               
+            </div>
+
+            <div id="withdrawalInfoView">
+               <h4 class="text-center dashboardHead top-10">REQUEST INFORMATION</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="withdrawalInfo"></table>
+                </div>
+            </div>
+
+            <div id="reportView">
+                <h4 class="text-center dashboardHead top-10">REPORT</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="reportData" ></table>
+                </div>
+            </div>
+
+            <div id="profileView">
+                <h4 class="text-center dashboardHead top-10">PROFILE</h4>
+                <div id="profileContainer">
+                        <div >
+                            <center>
+                            <div class="logo">
+                            <img id="profilePic4" src=""  />
+                            </div>
+                            <form  id="updateAccountPicForm" enctype="multipart/form-data">
+                            <div class="form-group"><input class="form-control" type="file" id="accountPicFile" name="accountPic" /></div>
+                            <div class="form-group"><button class="btn btn-success btn-block" id="updateProfilePicBtn" >Update Picture</button></div>
+                            </form>
+                            </center>
+                            
+                            <h4 class="dashboardHead text-center ">Account Information</h4>
+                            
+                            <div >
+                            <form  id="updateAccountInfoForm" >
+                            <div class="form-group">Email: <input id="emailInput" class="form-control" type="email" name="email" placeholder="Email"  maxlength="30" onkeyup="checkChar('emailInput')"  /></div>
+                            <div class="form-group">Current Password: <input id="passwordInput1" class="form-control" type="password" name="accesskey1" placeholder="Current Password"  maxlength="30" onkeyup="checkChar('passwordInput1')"  /></div>
+                            <div class="form-group">New Password: <input id="passwordInput2" class="form-control" type="password" name="accesskey2" placeholder="New Password"  maxlength="30" onkeyup="checkChar('passwordInput2')"  /></div>
+
+                            <div class="form-group"><button class="btn btn-primary btn-block" id="updateDataBtn" >Update Data</button></div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+<!--END OF USERDASHBOARD------------------------------------------------------------------------------------------------------------------>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+<script type="text/javascript" src="admin.js"></script>
+</body>
+
+</html>

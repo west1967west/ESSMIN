@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>ESSENTAIL MINERS</title>
+    <!--Bootstrap Css-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../includes/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   
+    <!--Bootsrap Script-->
+    <script src="../includes/bootstrap/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../includes/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../includes/bootstrap/js/sweetalert.min.js"></script>
+
+   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../includes/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <style>
+        body,html {background: #60a3bc !important;}
+        .position{max-width:350px; height:auto; margin:auto; position:relative;}
+        .user_card {background: #0e1a35;padding: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 5px;}
+        .brand_logo_container {padding: 10px;}
+        .brand_logo { height: 150px; width: auto; border-radius: 50%; border: 5px solid white; text-align:center;}
+        h3{color:white; text-align: center;}
+        .h-100{margin-top: 70px; }
+    </style>
+</head>
+
+<body >
+<div id="loginSignupContainer" class="container h-100">
+    <div  class="position user_card">
+                <div align="center" class="brand_logo_container"><img src="../img/profile.png" width="40%" class="img-responsive brand_logo" /></div>
+                <h3 class="text-bold text-center text-black">ADMINISTRATOR</h3>
+                
+                <div class="">
+                            <div class="form-group">
+                            <input type="password" maxlength="15" id="key" class="form-control" placeholder="Password" required />
+                            </div>
+                                            
+                            <div class="form-group">            
+                            <button id="LoginBtn" class="btn btn-primary btn-block">Login</button>               
+                            </div>  
+                </div>
+                    
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("document").ready(function(){
+        $("#LoginBtn").click(function(){
+            $(this).addClass("diabled");
+            $(this).text("Processing....");
+
+            $.post("services/login.php",{key:$("#key").val()},function(response){
+                
+                if(response==1){swal("Error!!","Invalid Password, Please Try Again, Or Contact Developer.","error");}
+                else{var myData=JSON.parse(response); localStorage.setItem("capoData",JSON.stringify(myData)); window.location.href="dashboard.html";}
+                 $("#LoginBtn").removeClass("diabled");
+                $("#LoginBtn").text("Login");
+            });
+        });
+    });
+</script>
+</body>
+
+</html>
